@@ -1,0 +1,24 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+
+        int buy_price=prices[0];
+        int current_profit=0;
+        int max_profit=0;
+        for(int i=0;i<prices.length;i++){
+            //To assign the lowest price to the buy_price
+            if(buy_price>prices[i]){
+                buy_price=prices[i];
+            } 
+//if the future price is greater then buy_price then it cal the profit
+            if(prices[i]>buy_price){
+                current_profit=prices[i]-buy_price;
+            }
+            if(current_profit>max_profit){
+                max_profit=current_profit;
+            }
+            
+        }
+        return max_profit;
+    
+    }
+}
